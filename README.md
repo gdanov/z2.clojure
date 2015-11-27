@@ -20,10 +20,10 @@ To install just
 
 At the first run Z2 little longer while it downloads the dependencies. Eventually you will see lines that look like this:
 ```
-11/27 09:49:48 [19]...ent/webWorker@0.2 [800]: 11/27 09:49:48 [1]com.gd.ClojureRTImpl [800]: starting RT for com.gd.z2.clojure/systemRepl
-11/27 09:49:50 [19]...ent/webWorker@0.2 [800]: 11/27 09:49:50 [35]      bootstrap-repl [800]: loading nrepl & cider, will take some time...
-11/27 09:50:10 [19]...ent/webWorker@0.2 [800]: 11/27 09:50:10 [35]      bootstrap-repl [800]: ich bin das REPL boot script and I listen on port 7888
-11/27 09:50:10 [19]...ent/webWorker@0.2 [800]: 11/27 09:50:10 [35]      bootstrap-comp [800]: init done for [bootstrap-repl]
+11/27 09:49:48 [1]com.gd.ClojureRTImpl [800]: starting RT for com.gd.z2.clojure/systemRepl
+11/27 09:49:50 [35]      bootstrap-repl [800]: loading nrepl & cider, will take some time...
+11/27 09:50:10 [35]      bootstrap-repl [800]: ich bin das REPL boot script and I listen on port 7888
+11/27 09:50:10 [35]      bootstrap-comp [800]: init done for [bootstrap-repl]
 ```
 as well as good deal "hello world" messages from the sample components. Once you see the "init done" message everything is ready.
 
