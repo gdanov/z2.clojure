@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app id="hibernate-basic" version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+<!--
+    <servlet>
+        <servlet-name>Clojure</servlet-name>
+        <servlet-class>hello.TheServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Clojure</servlet-name>
+        <url-pattern>/clj</url-pattern>
+    </servlet-mapping>-->
+    <servlet>
+        <servlet-name>Calculator</servlet-name>
+        <jsp-file>/views/main.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Calculator</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
+
