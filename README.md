@@ -59,5 +59,4 @@ Further reading on that problem:
 * [The static initializer of clojure.lang.RT](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/RT.java#L301)
 * [Thread from the clojure group](https://groups.google.com/d/topic/clojure/0AgUIiY8BQ8/discussion)
 * [Alternative design](https://groups.google.com/d/topic/clojure/0AgUIiY8BQ8/discussion)
-* 
 
