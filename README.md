@@ -31,7 +31,15 @@ as well as good deal "hello world" messages from the sample components. Once you
 
 Two [component factories](http://www.z2-environment.eu/v24doc#__RefHeading__3627_2054128055) that allow the creation of *runtime* and *library* clojure components. The major difference between the two is that *runtimes* have their own copy of the clojure runtime (clojure.lang.RT & co.) classes, while the *library* is passive contributor of clojure source files (namespaces) and references. 
 
-At the moment this is the supported dependency matrix:
+At the moment this is the supported dependency matrix (include/reference):
+
+==>             | Java | Clojure Runtime | Clojure Library
+--- | --- | --- | ---
+Java            | i/r  | -- | --
+Clojure Runtime | i/r  | -- | i
+Clojure Library | i  | -- | i
+
+The property name `clojure.libs` for clojure components is used to include and the standard `java.privateReferences` is used to reference.
 
 ## More on the *runtime* component
 
@@ -41,6 +49,9 @@ Key feature of Clojure is it's heavy reliance on Symbols and Vars to late bind (
 
 The solution I went with is to allow for many clojure runtimes to exists within one Z2 worker by making the *runtime* z2 component have it's own copy of the core clojure classes loaded but not shared with other runtimes. On one side it creates the illusion that each *runtime* component is an isolated island in the z2 ocean, on the other side it requires lots of attention when sharing classes or instances due to the problems arising from having classes loaded more than once in different loaders. 
 
-Sharing harmless .class files (anything non-clojure) between runtimes and java components is trivial (like the javax or z2 core interfaces) as long as they are [*referenced* and not *included*](http://www.z2-environment.eu/v24doc#__RefHeading__3643_2054128055).
+Sharing harmless .class files (anything non-clojure) between runtimes and java components is trivial (like the javax or z2 core interfaces) as long as they are [*referenced* and not *included*](http://www.z2-environment.eu/v24doc#__RefHeading__3643_2054128055). Everything else is to be avoided.
 
-Exchanging "harmless" **instances** of Clojure thingies is different thing. It's a challenge to sanitize these shared classes and instances, so for now the responsibility is 100% on the user's side. Having in mind the dynamic nature of Clojure, there is always the possibility for seemingly clean instance requesting the loading of Clojure namespace inside the wrong context classloader and run into conflicts causing `ClassDefNotFoundException`.
+Exchanging "harmless" **instances** of Clojure thingies is different thing. It's a challenge to sanitize these shared classes and instances, so for now the responsibility is 100% on the user's side. It's too complicated for me to be able to explain what's safe, so for now it's danger zone.
+
+*Runtime* component can reference Java and clojure *library* components
+
