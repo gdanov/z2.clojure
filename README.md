@@ -53,5 +53,11 @@ Sharing harmless .class files (anything non-clojure) between runtimes and java c
 
 Exchanging "harmless" **instances** of Clojure thingies is different thing. It's a challenge to sanitize these shared classes and instances, so for now the responsibility is 100% on the user's side. It's too complicated for me to be able to explain what's safe, so for now it's danger zone.
 
-*Runtime* component can reference Java and clojure *library* components
+Further reading on that problem:
+
+* [Clojure Compilation: Parenthetical Prose to Bewildering Bytecode](http://blog.ndk.io/2014/01/26/clojure-compilation.html)
+* [The static initializer of clojure.lang.RT](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/RT.java#L301)
+* [Thread from the clojure group](https://groups.google.com/d/topic/clojure/0AgUIiY8BQ8/discussion)
+* [Alternative design](https://groups.google.com/d/topic/clojure/0AgUIiY8BQ8/discussion)
+* 
 
