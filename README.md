@@ -5,17 +5,19 @@ Enables clojure to run on top of [Z2](http://www.z2-environment.eu)
 
 The repo contains the core components ([maven repo](com.gd.z2.clojure.mvn/) and [the component factory](com.gd.z2.clojure/)) as well as two sample components.
 
+The quality is beta-level. Expect memory leaks that typically manifist themselves as permGen OOM.
+
 To install just
 
-1. [download Z2](https://redmine.z2-environment.net/projects/z2-environment/wiki/Step_2_-_Install_and_run_in_5_minutes)
+1. [clone Z2](https://redmine.z2-environment.net/projects/z2-environment/wiki/Step_2_-_Install_and_run_in_5_minutes)
 1. clone this repository next to Z2 so that your folder looks like that:
 ```
 + project folder
-  + z2-base.core
+  + z2.clojure
   |-+ com.gd.z2.clojure
   |-+ com.gd.z2.mvn
   |-+ com.gd.z2.sample...
-  + z2.clojure
+  + z2-base.core
 ```
 
 At the first run Z2 little longer while it downloads the dependencies. Eventually you will see lines that look like this:
