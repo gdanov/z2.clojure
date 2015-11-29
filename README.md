@@ -5,7 +5,7 @@ Enables clojure to run on top of [Z2](http://www.z2-environment.eu)
 
 The repo contains the core components ([maven repo](com.gd.z2.clojure.mvn/) and [the component factory](com.gd.z2.clojure/)) as well as two sample components.
 
-The quality is beta-level. Expect memory leaks that typically manifist themselves as permGen OOM.
+The quality is beta-level. Expect memory leaks that typically manifist themselves as permGen OOM. Increasing the heap and permGen spaces of your webWorker will improve the [MTBF](https://en.wikipedia.org/wiki/Mean_time_between_failures).
 
 To install just
 
